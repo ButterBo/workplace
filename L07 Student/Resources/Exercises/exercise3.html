@@ -19,6 +19,10 @@
             background: dodgerblue;
         }
 
+        .tcircle{
+            background: red;
+        }
+
         .square {
             border-radius: 0;
             background: slateblue;
@@ -52,7 +56,11 @@
             $('[data-bs-toggle="tooltip"]').tooltip();
 
             // TODO 2: Add toggle function
-            
+            $(document).ready(function(){
+                $(".circle").click(function(){
+                    $(".circle").toggleClass("tcircle");
+                });
+            });
 
             // TODO 3: Clone square and append to grey box
             

@@ -5,9 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Document</title>
+    <title>Exercise 2</title>
+    <style>
+        .new{
+            border-style: solid;
+            background-color: aqua;
+            padding: 10px;
+            width: 20%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 <body>
-    
+    <form id="myForm">
+        <!-- Two text fields - Name and Email -->
+        <input id="name" type="text" placeholder="Name" value=""><br><br>
+        <input id="email" type="email" placeholder="Email" value=""><br><br>
+        <!-- Two radio buttons for Gender - Male and Female -->
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br>
+        <!-- Submit button -->
+        <input type="button" name="Submit" value="Submit" onClick="getData()"><br><br>
+    </form>
+
+    <!-- Display form data -->
+    <div id="display">    </div>
+
+    <script>
+        // JavaScript to get and display form data
+        // function getData() {
+        //     var name = document.getElementById("name").value;
+        //     var email = document.getElementById("email").value;
+        //     var gender = document.querySelector(":checked").value;
+
+        //     document.getElementById("display").innerHTML = name + "<br>";
+        //     document.getElementById("display").innerHTML += email + "<br>";
+        //     document.getElementById("display").innerHTML += gender;
+        // }
+
+        $(document).ready(function(){
+            $("[type='button']").click(function() {
+                $("#display").html(
+                    "You entered: <br><br>" +
+                    $("#name").val() + "<br>" +
+                    $("#email").val()+ "<br>" +
+                    $("input[name='gender']:checked").val())
+                    .hide()
+                    .fadeIn(2000)
+                    .addClass("new");
+            });
+
+            $("#display").mouseover(function(){
+                $(this).slideUp(1000);
+            });
+
+        });
+
+    </script>
 </body>
 </html>
