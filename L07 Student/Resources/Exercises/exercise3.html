@@ -20,7 +20,7 @@
         }
 
         .tcircle{
-            background: red;
+            background: green;
         }
 
         .square {
@@ -40,7 +40,7 @@
 
 <body>
     <!-- TODO 1: Add tooltip -->
-    <button type="button" class="btn btn-warning btn-lg mb-5">Button</button>
+    <button type="button" class="btn btn-warning btn-lg mb-5" data-toggle="tooltip" title="This is a Button">Button</button>
 
     <div class="circle mb-5"></div>
 
@@ -54,6 +54,7 @@
         $(document).ready(function () {
             // Initialise tooltips
             $('[data-bs-toggle="tooltip"]').tooltip();
+            
 
             // TODO 2: Add toggle function
             $(document).ready(function(){
