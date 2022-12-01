@@ -1,0 +1,93 @@
+video {position: absolute;
+    width: 100%;
+    z-index:-1}
+
+.st0{fill:url(#SVGID_1_);}
+.st1{fill:#EB5D57;}
+.st2{fill:#9E2121;}
+.st3{fill:#FFFFFF;}
+
+
+
+body {
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.logo {
+    width: 70px;
+    float: left;
+    padding: 10px;
+    position: absolute;
+}
+
+nav {
+    overflow: hidden;
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+nav a { 
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    background-color: #222;
+    color: white;
+}
+
+nav a.active {
+    background-color: #222;
+    color: #222;
+}
+
+section{
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    height: 300px;
+    padding: 10px;
+  }
+  
+  .footer {  
+    position: absolute;  
+    left: 10px;  
+    bottom: -99px;  
+    right: 10px;   
+    width: 95%;  
+    background-color: gray;  
+    color: white;  
+    text-align: center;  
+    }  
+  
+  h2{
+    color: #FFFFFF;
+  }
+  
+  p{
+    color: #FFFFFF;
+    padding-left: 5%;
+  }
+  
+  hr{
+    color: #FFFFFF;
+  }

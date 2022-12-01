@@ -1,0 +1,33 @@
+.st0{fill:url(#SVGID_1_);}
+.st1{fill:#EB5D57;}
+.st2{fill:#9E2121;}
+.st3{fill:#FFFFFF;}
+.logo{
+    width: 10%;
+    padding: 14px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: inline-block;
+    color: black;
+    text-align: right;
+    font-size: 100%;
+    font-family: 'Bree Serif', serif;
+    padding: 14px;
+    text-decoration: none;
+    position:relative;bottom: 90px;
+}
+
+li a:hover {
+    background-color: gray;
+}
+  
