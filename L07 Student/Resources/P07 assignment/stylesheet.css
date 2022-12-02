@@ -51,11 +51,6 @@
 
 .offline{
     border:solid gray;
-    height: 34px;
-    width: 34px;
-    background-color: #818181;
-    border-radius: 50%;
-    display: inline-block;
 }
 
 /* The side navigation menu */
