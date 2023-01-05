@@ -26,6 +26,10 @@
             border-radius: 25%;
         }
 
+        .name {
+            margin-left: 20%;
+        }
+
         h1 {
             text-align: center;
             font-family: 'Times New Roman', Times, serif;
@@ -55,7 +59,7 @@
             text-align: center;
         }
 
-        #mail1{
+        #mail1 {
             margin-right: 20%;
         }
     </style>
@@ -97,6 +101,7 @@
                         <button class="play">Play</button>
                         <button class="pause">Pause</button>
                     </div>
+                    <a href="#section2/1">My Favorite Food</a>
                 </div>
             </div>
         </div>
@@ -115,11 +120,31 @@
             </div>
 
             <div class="slide">
-                <h1>Slide 2</h1>
-            </div>
-
-            <div class="slide">
-                <h1>Slide 3</h1>
+                <h1 style="text-align: center;font-family: Times New Roman;padding-top: 20px;"><b>My Favorite Food</b>
+                </h1>
+                <hr>
+                <br>
+                <div class="row">
+                    <div class="column" style="text-align: center;">
+                        <h2 style="text-align: center;font-family: Times New Roman;"><b>Lasagna</b></h2>
+                        <br>
+                        <img class="shake" src="images/mmm.jpg" alt="FoodPic.JPG" width=430
+                            height=auto style="padding-left: 50;">
+                    </div>
+                    <div class="column" style="text-align: center;padding: 50px;">
+                        <p style="font-family: Times New Roman;">
+                            Lasagna is one of many dishes I consider to be my favorite food. I was watching a cartoon
+                            show called "Garfield",
+                            a fat orange stripe cat whose favorite food was also lasagna. Watching him devoring the
+                            lasagna made me very curious
+                            and hungry for lasagna. It was only a few months after that I ate my first lasagna at a
+                            restaurant and I was instantly
+                            captivated by its taste. As a result, lasagna would become my favorite western food that I
+                            would order at any chance I can get.
+                        </p>
+                        <a href="#section1">About Me</a>
+                    </div>
+                </div>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -172,11 +197,45 @@
             });
 
             anime({
+                targets: ".shake",
+                rotate: "10deg",
+                direction: 'alternate',
+                loop: true,
+                autoplay: true
+            });
+
+            anime({
                 targets: '#mail1',
                 translateX: 250,
                 direction: 'alternate',
                 loop: true,
                 delay: anime.stagger(100, { start: 500 }) // delay starts at 500ms then increase by 100ms for each elements.
+            });
+
+            var text = anime({ //fade in
+                targets: "p",
+                opacity: [0, 1], //start and end values
+                delay: 1500
+            });
+
+            var appear = anime({ //fade in
+                targets: ".contacts",
+                opacity: [0, 1], //start and end values
+                delay: 500
+            });
+
+            anime({
+                targets: ".name",
+                scale: 1.5,
+                delay: 500
+            });
+
+            anime({
+                targets: ".jobTitle",
+                rotate: "360deg",
+                autoplay: true,
+                direction: 'alternate',
+                delay: 1500
             });
 
             $(document).ready(function () {
@@ -189,9 +248,12 @@
                     afterLoad: function (origin, destination, direction) {
                         if (destination.index == 1) { //section 2
                             spinTitle.play(); //anime.js play method
+                            appear.play();
+                            text.play();
                         } else {
                             start.play();
                             start2.play();
+                            text.play();
                         }
                     }
                 });
