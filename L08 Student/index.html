@@ -19,6 +19,10 @@
         #img1 {
             padding-top: 25%;
         }
+
+        .tiredControl{
+            text-align: center
+        }
     </style>
 </head>
 
@@ -44,6 +48,10 @@
                 Development. <br>
             </p>
             <p class="yeesh">I am very tired</p>
+        </div>
+        <div class="tiredControl">
+            <button class="play">Play</button>
+            <button class="pause">Pause</button>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -72,11 +80,12 @@
             duration: 2000,
             rotate: '1turn',
             loop: true,
-            autoplay: true
+            autoplay: false
         });
+
         document.querySelector('.play').onclick = animation.play;
-        document.querySelector('.pause').onclick = animation.pause;
-        document.querySelector('.restart').onclick = animation.restart;
+        document.querySelector('.pause').onclick = animation.pause;;
+
     </script>
 </body>
 
