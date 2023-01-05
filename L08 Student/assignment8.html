@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        .title{
+            background-color: whitesmoke;
+            text-align: center;
+        }
+
+        h1{
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 20px;
+        }
+        h2,p {
+            text-align: left;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #img1 {
+            padding-top: 25%;
+        }
+
+        .tiredControl {
+            text-align: center
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="section">
+            <!-- <h1>Section 1</h1>
+            <h2 class="ml9">
+                <span class="text-wrapper">
+                    <span class="letters">I wanna go home</span>
+                </span>
+            </h2>
+            <a href="#section3">Go to Section 3</a> -->
+
+            <h1 class="title"><b>About Me</b></h1>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col" id="img1" style="text-align: center;">
+                    <img src="images/IMG_3937.JPG" alt="SeanPic.JPG" width=430 height=auto style="padding-left: 50;">
+                </div>
+                <div class="col" id="description" style="text-align: left;padding: 50px;">
+                    <h2 class="name"><b>Sean Yong</b></h2><br>
+                    <h3 class="jobTitle">Student</h3>
+                    <h3 class="age" id="age">19</h3>
+                    <p>
+                        Born in 29 March 2003, I was the second oldest sibling <br>
+                        I have three sisters and we get along with each other very well.<br>
+                        I like to build gunpla, draw things, and read story during my free time. <br>
+                        During 2016, I studied overseas in a small school in Taiwan. <br>
+                        I made many memories and friends who I still chat with online. <br>
+                        Currently as of 2023, I am studying in Republic Polytechnic in Diploma of Digital Design and
+                        Development. <br>
+                    </p>
+                    <p class="yeesh">I am very tired</p>
+                    <div class="tiredControl">
+                        <button class="play">Play</button>
+                        <button class="pause">Pause</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h1>Section 2</h1>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#fullpage').fullpage({ //initialize
+                    //set options
+                    sectionsColor: ['#03A9F4', '#2ECC71'],
+                    navigation: true,
+                    navigationPosition: 'right'
+                });
+
+                anchors: ['section1', 'section2'] //name the anchors for each section
+
+
+            });
+
+            anime({//Counter
+                targets: '#age',
+                innerHTML: [0, 19], //start and end values
+                easing: 'linear',
+                round: 1, //rounds off to zero decimal places
+                duration: 1000
+            });
+
+            anime({//Stagger
+                targets: '#img1',
+                translateY: -250,
+                delay: anime.stagger(1000) // increase delay by 100ms for each elements.
+            });
+
+            var animation = anime({
+                targets: '.yeesh',
+                translateX: 300,
+                scale: 2,
+                easing: 'easeInOutExpo',
+                direction: 'alternate',
+                duration: 2000,
+                rotate: '1turn',
+                loop: true,
+                autoplay: false
+            });
+
+            document.querySelector('.play').onclick = animation.play;
+            document.querySelector('.pause').onclick = animation.pause;;
+
+            var spinTitle = anime({
+                targets: ".s2",
+                rotate: "360deg",
+                autoplay: false,
+                duration: 1000
+            });
+
+        // var textWrapper = document.querySelector('.ml9 .letters');
+        // textWrapper.innerHTML = textWrapper.textContent.replace("<span class='letter'>$&</span>");
+
+        // anime.timeline({ loop: true })
+        //     .add({
+        //         targets: '.ml9 .letters',
+        //         scale: [0, 1],
+        //         duration: 1500,
+        //         elasticity: 600,
+        //         delay: (el, i) => 45 * (i + 1)
+        //     })
+        //     .add({
+        //         targets: '.ml9',
+        //         opacity: 0,
+        //         duration: 1000,
+        //         easing: "easeOutExpo",
+        //         delay: 1000
+        //     })
+        </script>
+</body>
+
+</html>
