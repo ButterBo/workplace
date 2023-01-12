@@ -12,10 +12,16 @@
 <body>
     <table id="singapore" class="display" width="100%"></table>
 
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
     <!-- Add the CDN link for the jQuery script here -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Add the CDN link for the DataTables script here -->
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
         var dataSet = [
@@ -61,17 +67,46 @@
             ["School of Technology for the Arts", "Diploma in Arts &amp; Theatre Management", "DATM", "R25"]
         ]
 
+        // Define chart labels
+        const labels = [
+            'Republic Polytechnic',
+            'Temasek Polytechnic',
+            'Ngee Ann Polytechnic',
+            'Nanyang Polytechnic',
+            'Singapore Polytechnic'
+        ];
+        // Set labels, colours and data
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Student Population',
+                backgroundColor: 'rgb(173, 216, 230)',
+                borderColor: 'rgb(173, 216, 230)',
+                data: [14400, 13000, 14800, 16220, 15900],
+            }]
+        };
+        // Configure chart
+        const config = {
+            type: 'bar',
+            data: data
+        };
+        // Render chart in <canvas>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
         // Add JavaScript to initialise DataTables to the table above
         $(document).ready(function () {
             $('#singapore').DataTable({
-                data:dataSet,
+                data: dataSet,
                 columns: [
-                    { title: "School"},
-                    { title: "Course Name"},
-                    { title: "Course Abbreviation"},
-                    { title: "Course Code"}
+                    { title: "School" },
+                    { title: "Course Name" },
+                    { title: "Course Abbreviation" },
+                    { title: "Course Code" }
                 ]
-            });               
+            });
         });
     </script>
 </body>
