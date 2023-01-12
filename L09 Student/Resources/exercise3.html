@@ -14,16 +14,39 @@
     </div>
 
     <!-- Add the CDN link for Chart.js here -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+
         // Define chart labels
-
+        const labels = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June'
+        ];
         // Set labels, colours and data
-
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'My First Dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [5, 10, 5, 2, 20, 30],
+            }]
+        };
         // Configure chart
-
+        const config = {
+            type: 'bar',
+            data: data
+        };
         // Render chart in <canvas>
-
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
     </script>
 </body>
 
