@@ -20,10 +20,10 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width:80%
+            width: 80%
         }
 
-        .circle{
+        .circle {
             position: absolute;
             height: 2%;
             width: 2%;
@@ -32,29 +32,29 @@
             margin: 1%;
         }
 
-        #RP{
+        #RP {
             left: 46%;
-            top:18%
+            top: 18%
         }
 
-        #TP{
+        #TP {
             left: 78%;
-            top:39%
+            top: 39%
         }
 
-        #NAP{
+        #NAP {
             left: 38%;
-            top:41%
+            top: 41%
         }
 
-        #NP{
-            left:58%;
-            top:32%
+        #NP {
+            left: 58%;
+            top: 32%
         }
 
-        #SP{
+        #SP {
             left: 40%;
-            top:45%
+            top: 45%
         }
     </style>
 </head>
@@ -91,6 +91,32 @@
     <script src="https://unpkg.com/tippy.js@6"></script>
 
     <script>
+
+        tippy('#RP', {
+            content: 'Republic Polytechnic',
+        });
+
+        tippy('#TP', {
+            content: 'Temasek Polytechnic',
+        });
+
+        tippy('#NAP', {
+            content: 'Ngee Ann Polytechnic',
+        });
+
+        tippy('#NP', {
+            content: 'Nanyang Polytechnic',
+        });
+
+        tippy('#SP', {
+            content: 'Singapore Polytechnic',
+        });
+
+        tippy('#RP', '#TP', '#NAP', '#NP', '#SP', {
+            // default
+            arrow: true,
+        });
+
         var dataSet = [
             ["School of Applied Science", "Diploma in Biomedical Science", "DBMS", "R14"],
             ["School of Applied Science", "Diploma in Biotechnology", "DBIO", "R16"],
