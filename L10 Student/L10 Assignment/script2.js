@@ -1,9 +1,3 @@
-var chart = anime({//Stagger
-    targets: '.head1',
-    translateX: 10,
-    delay: anime.stagger(500) // increase delay by 100ms for each elements.
-});
-
 anime({
     targets: "#b",
     rotate: "25deg",

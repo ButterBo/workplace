@@ -91,3 +91,9 @@ const myChart = new Chart(
     document.getElementById('myChart'),
     config
 );
+
+var chart = anime({//Stagger
+    targets: '.head1',
+    translateX: 10,
+    delay: anime.stagger(500) // increase delay by 100ms for each elements.
+});
